@@ -18,7 +18,6 @@
             })
 
             const result = await res.json();
-            console.log(result);
             if(result.message == "invalid user"){
                 message = "not a valid user";
             }else{

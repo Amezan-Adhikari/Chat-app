@@ -9,7 +9,7 @@
         message:input
       }
         dispatch("inputData",data);
-        input='';
+        input="";
     }
 </script>
 
@@ -38,11 +38,16 @@
             </div>
             <div class="flex-grow ml-4">
               <div class="relative w-full">
-                <input
+                <textarea 
                 bind:value={input}
+                on:keydown={(e)=>{
+                  if(e.key == "Enter")
+                {sendInputData()
+                }
+                }}  
                 placeholder="Aa"
-                  type="text"
-                  class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10"
+                  class="flex pr-10 
+                  resize-none overflow-hidden pt-1 w-full resize-y border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10"
                 />
                 
                     <button
@@ -71,8 +76,8 @@
               <button on:click={sendInputData}
                 class="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0"
               >
-                <span>Send</span>
-                <span class="ml-2">
+                <span class="hidden sm:block">Send</span>
+                <span class="m-2 sm:ml-2">
                   <svg
                     class="w-4 h-4 transform rotate-45 -mt-px"
                     fill="none"
