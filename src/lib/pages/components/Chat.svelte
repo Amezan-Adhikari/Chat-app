@@ -46,7 +46,8 @@
     
     <div class="flex h-screen text-gray-800">
         <div class="flex flex-row h-full w-full overflow-x-hidden">
-          <div class="flex flex-col py-8 pl-6 pr-2 w-64 bg-white flex-shrink-0">
+          <div class="flex flex-col py-8 pl-6 pr-2 w-64 bg-white flex-shrink-0 hidden sm:flex">
+            
               <UserSideBar userDetails={$userData} on:click={logout}/>
             <div class="flex flex-col mt-8">
               <div class="flex flex-row items-center justify-between text-xs">

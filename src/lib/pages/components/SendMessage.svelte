@@ -40,7 +40,7 @@
               <div class="relative w-full">
                 <input
                 bind:value={input}
-                placeholder="Send Message"
+                placeholder="Aa"
                   type="text"
                   class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10"
                 />
