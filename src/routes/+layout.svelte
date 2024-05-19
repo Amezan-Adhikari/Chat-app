@@ -16,7 +16,7 @@
       const token = localStorage.getItem("token")?localStorage.getItem("token"):'';
       if (token || token != '') {
         try {
-          const res = await fetch("http://localhost:3000/data", {
+          const res = await fetch("https://chat-app-backend-1tlp.onrender.com/data", {
             method: "GET",
             headers: {
               'Content-Type': 'application/json',

@@ -7,7 +7,7 @@
         let token = localStorage.getItem("token")?localStorage.getItem("token"):"";
 
         if(token!=""){
-            const res = await fetch("http://localhost:3000/login",{
+            const res = await fetch("https://chat-app-backend-1tlp.onrender.com/login",{
         method:"GET",
         headers:{
             'Authorization': `Bearer ${token}`,

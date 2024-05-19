@@ -31,7 +31,7 @@
 
             let addNewUser_Username;
             const addUser=async()=>{
-              const res = await fetch('http://localhost:3000/existingUsers',{
+              const res = await fetch('https://chat-app-backend-1tlp.onrender.com/existingUsers',{
                 method:"POST",
                 headers:{
                   "Content-Type":"application/json"

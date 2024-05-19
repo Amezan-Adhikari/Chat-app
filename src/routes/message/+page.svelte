@@ -9,7 +9,7 @@
     let allMessages=[];
     onMount(() => {
       console.log('Attempting to connect to Socket.IO server...');
-      socket = io('http://localhost:3000');
+      socket = io('https://chat-app-backend-1tlp.onrender.com');
   
       socket.on('connect', () => {
         console.log('Connected to server');

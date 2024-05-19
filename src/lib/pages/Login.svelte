@@ -9,7 +9,7 @@
         const user = e.detail;
 
         async function checkLogin(){
-            const res = await fetch("http://localhost:3000/login",{
+            const res = await fetch("https://chat-app-backend-1tlp.onrender.com/login",{
                 method:"POST",
                     headers: {
                         'Content-Type': 'application/json'
