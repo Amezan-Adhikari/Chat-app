@@ -6,8 +6,8 @@
       <div
         class="flex items-center justify-center h-8 w-8 bg-indigo-200 rounded-full"
       >
-        H
+        C
       </div>
-      <div class="ml-2 text-sm font-semibold">Henry Boyd</div>
+      <div class="ml-2 text-sm font-semibold">CHAT</div>
     </button>
     </div>

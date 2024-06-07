@@ -3,10 +3,12 @@
   //@ts-nocheck
   import { createEventDispatcher, onMount } from "svelte";
   import Modal from "./Modal.svelte";
+  import Loader from "./Loader.svelte";
   const dispatch = createEventDispatcher();
 let username='',password='';
 let usernameError = '';
 let passwordError = '';
+let loader = false;
 function validateLogin(){
   let validated = true;
   if(username.length<4){
@@ -26,6 +28,7 @@ function validateLogin(){
   }
 
   if(validated){
+    loader = true;
     dispatch("loginData",{username,password})
   }
 }
@@ -164,6 +167,8 @@ function validateLogin(){
             </div>
 
             <div class="flex w-full">
+
+              {#if !loader}
               <button on:click={validateLogin}
                 type="submit"
                 class="
@@ -201,6 +206,32 @@ function validateLogin(){
                   </svg>
                 </span>
               </button>
+                
+              {:else}
+              <button disabled
+                type="submit"
+                class="
+                  flex
+                  mt-2
+                  items-center
+                  justify-center
+                  focus:outline-none
+                  text-white text-sm
+                  sm:text-base
+                  bg-blue-500
+                  hover:bg-blue-600
+                  rounded-2xl
+                  py-2
+                  w-full
+                  transition
+                  duration-150
+                  ease-in
+                "
+              >
+                <Loader/>
+              </button>
+              {/if}
+              
             </div>
           </form>
         </div>

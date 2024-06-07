@@ -1,14 +1,16 @@
 <script>
   //@ts-nocheck
     import { createEventDispatcher } from "svelte";
+  import Loader from "./Loader.svelte";
     const dispatch = createEventDispatcher();
      let username='';
      let password='';
      let confirmPassword= '';
+     let loader = false;
      let passwordError='',usernameError = '', confirmPasswordError='';
     let disabled = false;
     function validateForm(){
-      
+      loader = true;
         let validated = true;
         if(username.length<5){
             usernameError = "* username too short";
@@ -234,6 +236,8 @@
 
 
             <div class="flex w-full">
+
+              {#if !loader}
               <button 
               {disabled}
               on:click|preventDefault = {validateForm}
@@ -273,6 +277,33 @@
                   </svg>
                 </span>
               </button>
+              {:else}
+              <button 
+              disabled
+              
+                type="submit"
+                class="
+                  flex
+                  mt-2
+                  items-center
+                  justify-center
+                  focus:outline-none
+                  text-white text-sm
+                  sm:text-base
+                  bg-blue-500
+                  hover:bg-blue-600
+                  rounded-2xl
+                  py-2
+                  w-full
+                  transition
+                  duration-150
+                  ease-in
+                "
+              >
+                <Loader/>
+              </button>
+              {/if}
+             
             </div>
           </form>
         </div>
